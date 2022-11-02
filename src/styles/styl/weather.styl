@@ -1,0 +1,156 @@
+.weather-app
+  display flex
+  flex-flow column wrap
+  background linear-gradient(to bottom right, $colorRed, $colorOrange, $colorTeal, $colorGreen, $colorBlue, $colorViolet)
+  color $colorLight3
+  align-content center
+  text-align center
+  padding 2rem 0
+
+.container
+  max-width 70vw
+  margin 0 auto
+
+  @media (max-width $ms)
+    max-width 100vw
+
+.form_weather
+  width 100%
+
+.form__input_weather
+  padding 1rem
+  color $colorDark2
+  border-radius 1.5rem 0 1.5rem 0
+  font-size: $fontSize * 2
+  margin 1rem 0 0
+  text-align center
+  text-transform capitalize
+
+.mode-setters
+  display flex
+  flex-flow row nowrap
+  justify-content center
+
+.set-mode
+  background alpha($colorWhite, 0)
+  border 0
+  border-bottom 0.1rem solid
+  padding 0.5rem 1.5rem
+  color $colorLight3
+  font-size 1rem
+  flex 0 1 auto
+
+  &:hover
+    background darken(alpha($colorWhite, 0.15), 4)
+
+.general-wrapper
+  display flex
+  justify-content space-evenly
+  padding 0 0 2rem
+  flex-flow row wrap
+
+.weather-city, .city
+  font-size 2.5rem
+  font-weight 300
+  text-transform capitalize
+
+.desc-main
+  font-size 1.75rem
+  font-weight 300
+
+.time
+  font-weight 700
+  font-size 2rem
+
+.minutely-content
+  .time, .precipitation
+    font-weight 500
+    font-size 1.25rem
+
+.desc
+  font-size 1.25rem
+  font-weight 300
+
+.feels-like
+  font-weight 300
+
+.weather-temp
+  display flex
+  flex-flow column nowrap
+  justify-content space-around
+
+.temp-main
+  font-size 6rem
+  font-weight 100
+
+.temp
+  font-size 2rem
+  font-weight 300
+
+.min-max
+  font-size 2rem
+  font-weight 300
+
+.minutely-container
+  overflow hidden
+
+.minutely-wrapper, .hourly-wrapper
+  width 100vw
+  display flex
+  flex-flow row nowrap
+  overflow-x auto
+  overflow-y hidden
+
+.minutely, .hourly
+  flex 1 0 auto
+  padding 1rem 1.5rem
+  background conic-gradient(from -30deg, $colorTeal, $colorGreen, $colorGreen, $colorTeal)
+
+.minutely-content, .hourly-content
+  display flex
+  flex-flow column wrap
+
+.daily-wrapper
+  position relative
+  border solid $colorYellow 0.25rem
+  border-radius 1rem
+  margin 1rem auto
+
+.daily
+  padding 1rem
+
+  &::before
+    writing-mode sideways-lr
+    text-orientation upright
+    position absolute
+    left 0
+    padding 0.5rem
+
+  p
+    margin 0
+    padding 0.5rem 0
+
+.morn
+  background alpha($colorViolet, 0.25)
+
+  &::before
+    content 'Morning'
+
+.day
+  background alpha($colorBlue4, 0.75)
+
+  &::before
+    content 'Afternoon'
+
+.eve
+  background alpha($colorBlue1, 0.75)
+
+  &::before
+    content 'Evening'
+
+.night
+  background alpha($colorBlue0, 0.9)
+  border-radius 0 0 1rem 1rem
+
+  &::before
+    content 'Night'
